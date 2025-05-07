@@ -1,0 +1,106 @@
+/* ------------------------------------------------------------------
+   SKILLS  –  Desktop‑first, then two mobile break‑points
+------------------------------------------------------------------- */
+
+/* ---------- Base / Desktop (≥ 992 px) ---------- */
+.skills-container {
+    padding: 5% 10%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  
+    svg { color: #fff; }
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* three cards across */
+    gap: 50px;
+  }
+  
+  .skill {
+    align-items: center;
+    text-align: left;
+  }
+  
+  /* ---------- Chip styling (unchanged) ---------- */
+  .chip {
+    color: rgb(39, 40, 34) !important;
+    background-color: #fff !important;
+    font-size: 0.8rem !important;
+    height: 25px !important;
+  
+    span {
+      font-family: 'Courier Prime', monospace;
+      color: rgb(39, 40, 34);
+    }
+  
+    svg { height: 15px !important; }
+  }
+  
+  .flex-chips {
+    line-height: 2;
+    margin: 0.5;
+  
+    .chip-title {
+      color: #fff;
+      padding-right: 10px;
+    }
+  
+    .MuiChip-root   { margin-right: 0.5em; }
+    .MuiChip-outlined {
+      background-color: #e0e0e0;
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    }
+    .MuiChip-outlined span { color: rgb(39, 40, 34); }
+  }
+  
+  /* ------------------------------------------------------------------
+     RESPONSIVE BREAK‑POINTS
+  ------------------------------------------------------------------- */
+  
+  /* ---------- Tablets & small laptops (< 992 px) ---------- */
+  @media (max-width: 991px) {
+    .skills-container {
+      padding: 4% 6%;
+    }
+  
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr); /* two cards across */
+      gap: 40px;
+    }
+  
+    .chip { font-size: 0.76rem !important; }
+  }
+  
+  /* ---------- Large phones & small tablets (< 768 px) ---------- */
+  @media (max-width: 767px) {
+    .skills-container {
+      padding: 4% 5%;
+    }
+  
+    .skills-grid {
+      grid-template-columns: 1fr; /* one card per row */
+      gap: 30px;
+    }
+  
+    .skill { padding-bottom: 6%; }
+  
+    .chip {
+      font-size: 0.72rem !important;
+      height: 22px !important;
+    }
+  }
+  
+  /* ---------- Small phones (< 480 px) ---------- */
+  @media (max-width: 479px) {
+    .skills-container { padding: 3% 4%; }
+  
+    .chip {
+      font-size: 0.68rem !important;
+      height: 20px !important;
+    }
+  
+    .flex-chips { line-height: 1.8; }
+  }

@@ -1,0 +1,65 @@
+/* ------------------------------------------------------------------
+   VERTICAL‑TIMELINE  – Desktop‑first, then two break‑points
+------------------------------------------------------------------- */
+
+/* ---------- Base / Desktop (≥ 992 px) ---------- */
+.vertical-timeline {
+    span {                // the dotted line labels (time‑markers)
+      color: #fff;
+      font-family: 'Courier Prime', monospace;
+    }
+  
+    p,
+    .vertical-timeline-element p,
+    .vertical-timeline-element h3,
+    .vertical-timeline-element h4,
+    .vertical-timeline-element span {
+      color: rgb(39, 40, 34);
+    }
+  
+    .vertical-timeline-element-date { color: #fff; }  /* white on desktop */
+  
+    /* Font‑Awesome (or SVG) icons */
+    .svg-inline--fa { color: #fff; }
+  }
+  
+  /* ------------------------------------------------------------------
+     RESPONSIVE BREAK‑POINTS
+  ------------------------------------------------------------------- */
+  
+  /* ---------- Tablets & small laptops (< 992 px) ---------- */
+  @media (max-width: 991px) {
+    /* Show dark text for the floating date to avoid blending into bg */
+    .vertical-timeline-element-date { color: rgb(39, 40, 34); }
+  
+    /* Optionally shrink font‑sizes */
+    .vertical-timeline-element h3 { font-size: 1.15rem; }
+    .vertical-timeline-element h4 { font-size: 1rem;  }
+    .vertical-timeline-element p  { font-size: 0.9rem; }
+  }
+  
+  /* ---------- Phones (< 576 px) ---------- */
+  @media (max-width: 575px) {
+    /* Center timeline content for narrow screens */
+    .vertical-timeline-element {
+      text-align: center;
+  
+      /* Make the icon smaller so it doesn’t dominate */
+      .vertical-timeline-element-icon {
+        transform: translateX(-50%);
+        svg { font-size: 1.1rem; }
+      }
+  
+      /* Tighten up spacing */
+      h3 { font-size: 1.05rem; }
+      h4 { font-size: 0.9rem;  margin-top: 0.3rem; }
+      p  { font-size: 0.85rem; }
+    }
+  
+    /* Dates stack below the card for readability */
+    .vertical-timeline-element-date {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.8rem;
+    }
+  }

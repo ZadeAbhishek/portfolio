@@ -1,0 +1,82 @@
+/* CertificationCards.scss */
+
+/* ---------- Base styles (≥ 768 px) ---------- */
+.certifications-section {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .cert-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  
+  .cert-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    transition: box-shadow 0.2s;
+  
+    &:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+  
+    .cert-icon {
+      font-size: 1.8rem;
+      color: #198754;
+      margin-bottom: 0.5rem;
+    }
+  
+    .cert-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 0.25rem 0;
+  
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  
+    .cert-provider,
+    .cert-date {
+      font-size: 0.85rem;
+      color: #666;
+      margin: 0;
+    }
+  }
+  
+  /* ---------- Medium screens (< 768 px) ---------- */
+  @media (max-width: 767px) {
+    .cert-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+    }
+  
+    .cert-card {
+      padding: 0.85rem;
+  
+      .cert-title { font-size: 0.95rem; }
+      .cert-provider,
+      .cert-date { font-size: 0.8rem; }
+    }
+  }
+  
+  /* ---------- Small phones (< 480 px) ---------- */
+  @media (max-width: 479px) {
+    .cert-grid {
+      /* Single‑column strip for very small screens */
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  
+    .cert-card {
+      padding: 0.75rem;
+  
+      .cert-icon { font-size: 1.6rem; }
+      .cert-title { font-size: 0.9rem; }
+      .cert-provider,
+      .cert-date { font-size: 0.75rem; }
+    }
+  }

@@ -1,0 +1,141 @@
+/* ---------------------------------------------------------------
+   ABOUT SECTION  – Desktop‑first, then two mobile break‑points
+---------------------------------------------------------------- */
+
+/* ---------- Base / Desktop (≥ 992 px) ---------- */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    min-height: 700px;
+    padding: 0 15%;
+    background: url('../images/bg-dark.png') center / cover fixed;
+    text-align: left;
+  
+    &.dark-mode { background-color: rgba(0, 0, 0, 0.2); }
+  
+    .content {
+      z-index: 2;
+  
+      h1 {
+        font-size: 5rem;
+        margin: 0;
+      }
+  
+      p {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+  
+      /* desktop social icons */
+      .social_icons {
+        display: flex;
+        gap: 10px;
+        color: #fff;
+  
+        svg { font-size: 1.8rem; }
+      }
+  
+      /* hidden on desktop, shown on mobile */
+      .mobile_social_icons { display: none; }
+    }
+  
+    .image-wrapper {
+      z-index: 2;
+  
+      img {
+        width: 150px;
+        border-radius: 50%;
+      }
+    }
+  }
+  
+  /* ---------------------------------------------------------------
+     RESPONSIVE BREAK‑POINTS
+  ---------------------------------------------------------------- */
+  
+  /* ---------- Tablets & small laptops (< 992 px) ---------- */
+  @media (max-width: 991px) {
+    .about-section {
+      flex-direction: column;
+      padding: 120px 8% 60px;
+  
+      .content {
+        width: 100%;
+        text-align: center;
+  
+        h1 { font-size: 4rem; }
+        p  { font-size: 1.3rem; }
+  
+        /* hide desktop icons */
+        .social_icons { display: none; }
+  
+        /* show mobile strip */
+        .mobile_social_icons {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin-top: 1rem;
+  
+          svg { font-size: 1.8rem; }
+        }
+      }
+  
+      .image-wrapper {
+        margin-top: 2rem;
+  
+        img { width: 140px; }
+      }
+    }
+  }
+  
+  /* ---------- Large phones & small tablets (< 768 px) ---------- */
+  @media (max-width: 767px) {
+    .about-section {
+      padding: 100px 6% 50px;
+  
+      .content {
+        h1 { font-size: 3.2rem; }
+        p  { font-size: 1.15rem; }
+      }
+  
+      .image-wrapper img { width: 130px; }
+    }
+  }
+  
+  /* ---------- Small phones (< 480 px) ---------- */
+  @media (max-width: 479px) {
+    .about-section {
+      padding: 90px 5% 45px;
+  
+      .content {
+        h1 { font-size: 2.6rem; }
+        p  { font-size: 1rem;   }
+  
+        .mobile_social_icons svg { font-size: 1.6rem; }
+      }
+  
+      .image-wrapper img { width: 115px; }
+    }
+  }
+  
+  /* ----------------------------------------------------------------
+     Legacy nav rules (unchanged—only applied when viewport ≤ 567 px)
+     Feel free to delete if no longer needed.
+  ---------------------------------------------------------------- */
+  @media (max-width: 567px) {
+    .nav-left   { padding-top: 20px; float: left; }
+    .nav-left img { height: 35px; }
+    .nav-right  { float: right; }
+    .nav-right li {
+      list-style: none;
+      padding: 10px 15px;
+      font-size: 13px;
+      color: #fff;
+      width: 10%;
+    }
+    .nav-right ul { margin: 0; padding: 0; }
+    body { width: 100%; }
+    .about { padding: 0 5%; font-size: 12px; }
+  }

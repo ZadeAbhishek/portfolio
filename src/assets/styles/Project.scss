@@ -1,0 +1,77 @@
+/* ------------------------------------------------------------------
+   PROJECTS SECTION – desktop‑first, then two mobile break‑points
+------------------------------------------------------------------- */
+
+/* ---------- Base / Desktop (≥ 992 px) ---------- */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 10%;
+    text-align: left;
+  }
+  
+  .projects-grid {
+    display: grid;
+    gap: 50px;
+    /* two cards across, stretch evenly */
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .project {
+    text-align: left;
+  
+    h2:hover {
+      text-decoration: underline;
+      transition: color 0.15s ease-in-out,
+        background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out;
+    }
+  
+    .zoom {
+      border-radius: 5px;
+      transition: transform 0.2s;
+      margin: 0 auto;
+  
+      &:hover { transform: scale(1.05); }
+    }
+  }
+  
+  /* ------------------------------------------------------------------
+     RESPONSIVE BREAK‑POINTS
+  ------------------------------------------------------------------- */
+  
+  /* ---------- Tablets & small laptops (< 992 px) ---------- */
+  @media (max-width: 991px) {
+    .projects-container { padding: 5% 6%; }
+  
+    .projects-grid {
+      /* two columns if space allows, otherwise auto‑wrap */
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+    }
+  }
+  
+  /* ---------- Large phones & small tablets (< 768 px) ---------- */
+  @media (max-width: 767px) {
+    .projects-container { padding: 5% 5%; }
+  
+    .projects-grid {
+      /* single column strip on narrow screens */
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  
+    .project { padding-bottom: 5%; }
+  }
+  
+  /* ---------- Small phones (< 480 px) ---------- */
+  @media (max-width: 479px) {
+    .projects-container { padding: 5% 4%; }
+  
+    .projects-grid { gap: 25px; }
+  
+    .project {
+      h2 { font-size: 1.05rem; }
+      p  { font-size: 0.9rem; }
+    }
+  }
