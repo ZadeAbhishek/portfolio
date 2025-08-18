@@ -41,6 +41,20 @@ const Timeline: React.FC = () => (
           </p>
         </VerticalTimelineElement>
 
+        {/* Software Developer (Internship) + Graduate Software Developer (Full-Time) */}
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="March 2022 – Sep 2023"
+          iconStyle={{ background: '#5000ca', color: '#fff' }}
+          icon={<FontAwesomeIcon icon={faBriefcase} />}
+        >
+          <h3 className="vertical-timeline-element-title">Software Developer (Internship) + Graduate Software Developer (Full-Time)</h3>
+          <h4 className="vertical-timeline-element-subtitle">GearToCare · Nagpur, India</h4>
+          <p>
+          Built a full-stack web platform in Node.js for Two-Wheeler Doorstep Service with customer,mechanic, and admin portals..
+          </p>
+        </VerticalTimelineElement>
+
         {/* GSoC Mentor — CircuitVerse */}
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
